@@ -17,12 +17,11 @@ var app = new Vue({
     const self = this;
 
     axios.get('https://flynn.boolean.careers/exercises/api/array/music')
-      .then(function(resp) {
-        const songs = resp.data.response
-        console.log(songs);
-        self.songArray = songs;
-      });
-
+    .then(function(resp) {
+      const songs = resp.data.response
+      console.log(songs);
+      self.songArray = songs;
+    });
   }
 
 });
