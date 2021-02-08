@@ -19,15 +19,24 @@
       <div class="container">
         <img src="img/logo.png" alt="logo" />
       </div>
+      <div class="select">
+        <select v-model="selected" >
+          <option enable value="">Please select a genre</option>
+          <option>Pop</option>
+          <option>Rock</option>
+          <option>Metal</option>
+          <option>Jazz</option>
+        </select>
+      </div>
     </header>
 
     <div class="cds-container container">
       <!-- Disco ad esempio -->
-      <div class="cd" v-for="item in songArray" :key="item.key">
-        <img :src="item.poster" alt="">
-        <h3>{{item.title}}</h3>
-        <span class="author">{{item.author}}</span>
-        <span class="year">{{item.year}}</span>
+      <div v-if="selected === item.genre" class="cd" v-for="item in songArray">
+          <img :src="item.poster" alt="">
+          <h3>{{item.title}}</h3>
+          <span class="author">{{item.author}}</span>
+          <span class="year">{{item.year}}</span>
       </div>
     </div>
 
